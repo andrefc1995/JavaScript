@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País</title>
+    <style>
+        body{
+            background-color:cadetblue;
+            font-family: Calibri;
+            font-size: 1em;
+            color:black;
+            margin-top: 5%;
+            margin-left: 30%;
+            justify-content: center;
+        }
+        input{
+            border-radius: 3px;
+        }
+        p{
+            font-size: 1.4em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Brasileiro ou Estrangeiro?</h1>
+    <p>Em qual país você vive?</p> <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Verificar" onclick="homologar()">
+    <div id="res"></div>
+    <script>
+        function homologar(){
+            var txtp = window.document.querySelector('input#txtpais')
+            var res = window.document.querySelector('div#res')
+            var valor = String(txtp.value)
+            res.innerHTML = `<p>Vivendo em <strong>${valor}</strong></p>`
+            if (valor == 'Brasil'){
+                res.innerHTML += `<p>Você é <strong>Brasileiro</strong>`
+            } else{
+                res.innerHTML += `<p>Você é <strong>Estrangeiro</strong>`
+            }
+        }
+
+
+    </script>
+</body>
+</html>
