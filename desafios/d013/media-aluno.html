@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do aluno</title>
+    <style>
+        body{
+            font: normal 18px Arial;
+        }
+        input{
+            font: normal 18px Arial;
+            width: 185px;
+            height: 75px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+    <input type="button" value="Entrar com as notas" onclick="calcular()">
+    
+    <div id="res">
+        <br>Clique no botão acima para informar as notas do aluno.
+    </div>
+    <script>
+        function calcular(){
+            var aluno = window.prompt('Qual é o nome do aluno?')
+            var n1 = Number(window.prompt(`Primeira nota de ${aluno}:`))
+            var n2 = Number(window.prompt(`Segunda nota de ${aluno}:`))
+            var media = (n1 + n2) / 2
+            var res = document.getElementById('res')
+            res.innerHTML = `<p><h2>Analisando a situação de ${aluno}</h2></p>`
+            res.innerHTML += `<p>Com as notas ${n1} e ${n2}, a <strong>média é ${media}</strong></p>`
+            if (media<3){
+                res.innerHTML += `Com média abaixo de 3, o aluno está REPROVADO`
+            }else if (media<6){
+                res.innerHTML += `Com média entre 3 e 6, o aluno está em RECUPERAÇÃO`
+            }else{
+                res.innerHTML += `Com média acima de 6, o aluno está APROVADO`
+            }
+            
+        }
+    </script>
+</body>
+</html>

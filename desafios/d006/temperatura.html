@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperaturas</title>
+    <style>
+        body{
+            font: normal 18px Arial;
+        }
+        input{
+            font: normal 18px Arial;
+            width: 150px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <input type="button" value="Converter" onclick="converter()">
+    
+    <div id="res">
+        <br>Clique no Botão acima para iniciar.
+    </div>
+    <script>
+        function converter(){
+            var c = Number(window.prompt('Digite uma temperatura em °C (Celsius)'))
+            var k = 273.15
+            var res = window.document.getElementById('res')
+            res.innerHTML = `<p>A temperatura de ${c} °C, corresponde a...</p>`
+            res.innerHTML += `<p>${c+k}°K (Kelvin)</p>`
+            res.innerHTML += `<p>${(c*9/5)+32}°F (Fahrenheit)</p>`
+        }
+    </script>
+</body>
+</html>

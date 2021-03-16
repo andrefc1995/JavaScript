@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajustar Salário</title>
+    <style>
+        body{
+            font: normal 18px Arial;
+        }
+        input{
+            font: normal 18px Arial;
+            width: 180px;
+            height: 70px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reajuste salarial</h1>
+    <input type="button" value="Reajustar Salário" onclick="calcular()">
+    <div id="res">
+      <br>Clique no botão acima para iniciar.
+    </div>
+    <script>
+        function calcular(){
+            var func = window.prompt('Qual é o nome do funcionário?')
+            var salario = Number(window.prompt(`Qual é o salário de ${func}`))
+            var porc = Number(window.prompt(`O salário de ${func} vai ser reajustado em qual porcentagem?`))
+            var reajuste = (salario*porc)/100
+            var salariocomreajuste = salario + reajuste
+            var res = window.document.getElementById('res')
+            res.innerHTML = `<p><h2>${func} recebeu um aumento salarial!</h2></p>`
+            res.innerHTML += `<p>O salário atual era R$${salario}.`
+            res.innerHTML += `<p>Com um aumento de ${porc}%, o salário vai aumentar R$ ${reajuste} no próximo mês.</p>`
+            res.innerHTML += `<p>E a partir daí, ${func} vai passar a receber R$${salariocomreajuste}.`
+        }
+    </script>
+</body>
+</html>

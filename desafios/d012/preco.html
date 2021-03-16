@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <style>
+        body{
+            font: normal 18px Arial;
+        }
+        input{
+            font: normal 18px Arial;
+            width: 125px;
+            height: 75px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">
+        <br>Clique no botão acima para analisar a mudança do preço.
+    </div>
+    <script>
+        function verificar(){
+            var anterior = Number(window.prompt(`Qual era o preço anterior do produto?`))
+            var atual = Number(window.prompt(`Qual é o preço atual do produto?`))
+            var diferenca = atual - anterior
+            var por = (anterior*atual)/100
+            var res = document.getElementById('res')
+            res.innerHTML = `<p><h2>Analisando os valores informados</h2></p>`
+            res.innerHTML += `<p>O produto custava R$ ${anterior} e agora custa R$ ${atual}</p>`
+            if (atual>anterior){
+                res.innerHTML += `<p>Hoje o produto está mais caro.</p>`
+                res.innerHTML += `<p>O preço subiu R$ ${diferenca} em relação ao preço anterior.</p>`
+                res.innerHTML += `<p>Uma variação de ${por}% pra cima.</p>`
+            }else{
+                res.innerHTML += `<p>Hoje o produto está mais barato.</p>`
+                res.innerHTML += `<p>O preço caiu R$ ${diferenca} em relação ao preço anterior.</p>`
+                res.innerHTML += `<p>Uma variação de ${por}% pra baixo.</p>`
+            }
+        }
+        
+    </script>
+</body>
+</html>
