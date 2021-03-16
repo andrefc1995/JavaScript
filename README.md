@@ -1,2 +1,2 @@
 # JavaScript
-Repositório de aprendizado de JavaScript
+Curso de JavaScript
